@@ -1,12 +1,23 @@
 module motor(
         input clk,
         input rst,
-        // input [?? :0]mode,
+        input [2:0] mode,
         output  [1:0] pwm
     );
 
-    reg [9:0] next_left_motor, next_right_motor;
-    reg [9:0] left_motor, right_motor;
+    parameter STOP = 3'b000;
+    parameter Straight_speed_1 = 3'b001;
+    parameter Straight_speed_2 = 3'b010;
+    parameter Straight_speed_3 = 3'b011;
+    parameter Left_speed_1 = 3'b100; // turn left "in place"
+    parameter Left_speed_2 = 3'b101; // move and turn left simultaneously
+    parameter Right_speed_1 = 3'b110; // trun right "in place"
+    parameter Right_speed_2 = 3'b111; // move and turn right simultaneously
+
+    reg [9:0] next_left_motor;
+    reg [9:0] next_right_motor;
+    reg [9:0] left_motor;
+    reg [9:0] right_motor;
     wire left_pwm, right_pwm;
 
     motor_pwm m0(clk, rst, left_motor, left_pwm);
@@ -24,7 +35,46 @@ module motor(
     end
 
     // [TO-DO] take the right speed for different situation
-
+    always @(*) begin
+        case (mode)
+            STOP: begin
+                next_left_motor = 10'd0;
+                next_right_motor = 10'd0;
+            end
+            Straight_speed_1: begin
+                next_left_motor = 10'd128;
+                next_right_motor = 10'd128;
+            end
+            Straight_speed_2: begin
+                next_left_motor = 10'd256;
+                next_right_motor = 10'd256;
+            end
+            Straight_speed_3: begin
+                next_left_motor = 10'd512;
+                next_right_motor = 10'd512;
+            end
+            Left_speed_1: begin // turn left "in place"
+                next_left_motor = 10'd256;
+                next_right_motor = 10'd0;
+            end
+            Left_speed_2: begin // move and turn left simultaneously
+                next_left_motor = 10'd256;
+                next_right_motor = 10'd128;
+            end
+            Right_speed_1: begin // turn right "in place"
+                next_left_motor = 10'd0;
+                next_right_motor = 10'd256;
+            end
+            Right_speed_2: begin
+                next_left_motor = 10'd128;
+                next_right_motor = 10'd256;
+            end
+            default: begin
+                next_left_motor = 10'd0;
+                next_right_motor = 10'd0;
+            end
+        endcase
+    end
 
     assign pwm = {left_pwm, right_pwm};
 endmodule

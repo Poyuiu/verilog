@@ -17,34 +17,34 @@ module Top(
     onepulse d1(rst_pb, clk, Rst_n);
 
     motor A(
-              .clk(),
+              /*.clk(),
               .rst(),
               //.mode(),
-              .pwm()
+              .pwm()*/
           );
 
     sonic_top B(
-                  .clk(),
+                  /*.clk(),
                   .rst(),
                   .Echo(),
                   .Trig(),
-                  .stop()
+                  .stop()*/
               );
 
     tracker_sensor C(
-                       .clk(),
+                       /*.clk(),
                        .reset(),
                        .left_signal(),
                        .right_signal(),
-                       .mid_signal(),
-                       //.state()
+                       .mid_signal()
+                       //,.state()*/
                    );
 
-    always @(*) begin
+    /*always @(*) begin
         // [TO-DO] Use left and right to set your pwm
         //if(stop) {left, right} = ???;
         //else  {left, right} = ???;
-    end
+    end*/
 
 endmodule
 
@@ -73,3 +73,12 @@ module onepulse (PB_debounced, clk, PB_one_pulse);
     end
 endmodule
 
+
+
+// To fix vscode's red-line problem
+module motor ();
+endmodule
+module sonic_top ();
+endmodule
+module tracker_sensor ();
+endmodule
