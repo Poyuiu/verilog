@@ -90,7 +90,7 @@ module slave_control(clk, rst_n, request, ack, data_in, notice, valid, data);
                 next_start = (done == 1) ? 1'b0 : 1'b1;
             end
             //state_send_ack: begin
-            
+
             //end
             state_wait_data: begin
                 // next_state = (valid == 1)? ??? : ???;
