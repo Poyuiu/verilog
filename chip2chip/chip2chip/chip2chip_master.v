@@ -79,23 +79,22 @@ module master_control(
                 next_valid = 1'b0;
             end
             state_wait_ack: begin
-                next_state = (ack == 1'b1)?
+                next_state = (ack == 1'b1) ?
                 state_wait_to_send_data: state_wait_ack;
                 next_notice = 1'b0;
                 next_data = 3'b000;
-                next_request2s = (ack == 1'b1)? 1'b0: 1'b1;
-
+                next_request2s = (ack == 1'b1) ? 1'b0 : 1'b1;
                 next_start = (ack == 1'b1)? 1'b1: 1'b0;
                 next_valid = 1'b0;
             end
             state_wait_to_send_data: begin
                 next_state = (done == 1'b1) ?
                 state_send_data: state_wait_to_send_data;
-                next_notice = (done == 1'b1)? 1'b0: 1'b1;
-                next_data = (done == 1'b1)? data_in: 3'b000;
+                next_notice = (done == 1'b1) ? 1'b0 : 1'b1;
+                next_data = (done == 1'b1) ? data_in: 3'b000;
                 next_request2s = 1'b0;
-                next_start = (done == 1'b1)? 1'b0: 1'b1;
-                next_valid = (done == 1)? 1'b1: 1'b0;
+                next_start = (done == 1'b1) ? 1'b0 : 1'b1;
+                next_valid = (done == 1) ? 1'b1: 1'b0;
             end
             state_send_data: begin
                 next_state = (ack == 1'b0) ?
