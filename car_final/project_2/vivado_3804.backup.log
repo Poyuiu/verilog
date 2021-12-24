@@ -1,0 +1,100 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Dec 23 03:10:43 2021
+# Process ID: 3804
+# Current directory: C:/Users/poyu/Desktop/code/verilog/car_final/project_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3384 C:\Users\poyu\Desktop\code\verilog\car_final\project_2\project_2.xpr
+# Log file: C:/Users/poyu/Desktop/code/verilog/car_final/project_2/vivado.log
+# Journal file: C:/Users/poyu/Desktop/code/verilog/car_final/project_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/nthu-326/Downloads/project_1-20211221T090120Z-001-20211221T141445Z-001/project_1-20211221T090120Z-001/project_2' since last save.
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.ip_user_files', nor could it be found using path 'C:/Users/nthu-326/Downloads/project_1-20211221T090120Z-001-20211221T141445Z-001/project_1-20211221T090120Z-001/project_2/project_2.ip_user_files'.
+Scanning sources...
+Finished scanning sources
+INFO: [Project 1-230] Project 'project_2.xpr' upgraded for this version of Vivado.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: Top
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1315.305 ; gain = 246.230
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/top.v:1]
+	Parameter Forward bound to: 2'b00 
+	Parameter Back bound to: 2'b01 
+	Parameter Left bound to: 2'b10 
+	Parameter Right bound to: 2'b11 
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/top.v:96]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/top.v:96]
+INFO: [Synth 8-6157] synthesizing module 'onepulse' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/top.v:109]
+INFO: [Synth 8-6155] done synthesizing module 'onepulse' (2#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/top.v:109]
+INFO: [Synth 8-6157] synthesizing module 'motor' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/motor.v:1]
+	Parameter Forward bound to: 2'b00 
+	Parameter Back bound to: 2'b01 
+	Parameter Left bound to: 2'b10 
+	Parameter Right bound to: 2'b11 
+INFO: [Synth 8-6157] synthesizing module 'motor_pwm' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/motor.v:58]
+INFO: [Synth 8-6157] synthesizing module 'PWM_gen' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/motor.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'PWM_gen' (3#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/motor.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'motor_pwm' (4#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/motor.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'motor' (5#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/motor.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sonic_top' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/sonic.v:1]
+INFO: [Synth 8-6157] synthesizing module 'div' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/sonic.v:122]
+INFO: [Synth 8-6155] done synthesizing module 'div' (6#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/sonic.v:122]
+INFO: [Synth 8-6157] synthesizing module 'TrigSignal' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/sonic.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'TrigSignal' (7#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/sonic.v:92]
+INFO: [Synth 8-6157] synthesizing module 'PosCounter' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/sonic.v:21]
+	Parameter S0 bound to: 2'b00 
+	Parameter S1 bound to: 2'b01 
+	Parameter S2 bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'PosCounter' (8#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/sonic.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'sonic_top' (9#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/sonic.v:1]
+INFO: [Synth 8-6157] synthesizing module 'tracker_sensor' [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/tracker_sensor.v:2]
+	Parameter Forward bound to: 2'b00 
+	Parameter Back bound to: 2'b01 
+	Parameter Left bound to: 2'b10 
+	Parameter Right bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'tracker_sensor' (10#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/tracker_sensor.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Top' (11#1) [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/sources_1/imports/sample_code/top.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1369.438 ; gain = 300.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1369.438 ; gain = 300.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1369.438 ; gain = 300.363
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1369.438 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/constrs_1/new/cons.xdc]
+Finished Parsing XDC File [C:/Users/poyu/Desktop/code/verilog/car_final/project_2/project_2.srcs/constrs_1/new/cons.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1482.176 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 1619.820 ; gain = 550.746
+25 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 1619.820 ; gain = 601.852
+close_design
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 23 03:40:43 2021...
